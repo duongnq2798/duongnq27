@@ -148,6 +148,7 @@ a {
   padding-left: 30px;
   padding-top: 50px;
   color: #ffffff;
+  position: relative;
 }
 .container-cv .main-personal .ps-info_container {
   width: 100%;
@@ -415,6 +416,18 @@ a {
 }
 
 /*MAIN-PERSONAL-END*/
+
+/* Icon Redirect */
+
+.social-icon{
+  width: 500px;
+  height: 50px;
+  background-color: aliceblue;
+}
+.social-icon ul {
+  list-style: none;
+  color: white;
+}
 
 @media only screen and (min-width: 720px) {
   .container-cv {
