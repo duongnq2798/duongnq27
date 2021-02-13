@@ -25,11 +25,19 @@ body {
 a {
   text-decoration: none;
 }
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+.githubIcon {
+  width: 50%;
+  background: var(--color-06);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* transform: ; */
+  transform: translateY(100%) translateX(-35%) rotate(-45deg);
 }
+.githubText {
+  color: var(--color-02);
+  text-align: center;
+  font-size: medium;
+}
+
 .all-text-btn {
   color: var(--color-02);
   font-size: 2em;
@@ -55,14 +63,69 @@ a {
   width: 300px;
   height: 300px;
   background-size: cover;
-  border-radius: 50%;
-  border: 10px solid var(--color-04);
+  border-radius: 5%;
+  border: 10px solid #212529;
   display: inline-block;
   margin-top: 60px;
   overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+}
+.container-cv .main-info .profile .pf-background::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 .container-cv .main-info .profile .pf-background .bg-img {
   width: 100%;
+  background-size: cover;
+  position: absolute;
+  top: -33%;
+  left: 0%;
+}
+.container-cv .main-info .profile .pf-background:hover::before {
+  -webkit-animation: circle 0.75s;
+  animation: circle 0.75s;
+}
+.container-cv .main-info .profile .pf-background:hover {
+  -webkit-filter: sepia(0);
+  filter: sepia(0);
+}
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+@keyframes circle {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
 }
 .container-cv .main-info .profile .pf-name {
   font-size: 2em;
@@ -205,10 +268,7 @@ a {
   letter-spacing: 1.3px;
   font-weight: 600;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .ps-content_detail--title:before {
+.container-cv .main-personal .ps-info_container .ps-content_detail--title:before {
   content: '';
   display: inline-block;
   width: 12px;
@@ -236,22 +296,12 @@ a {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.4), 0 15px 12px rgba(0, 0, 0, 0.5);
   position: relative;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  img {
+.container-cv .main-personal .ps-info_container .show-project .block-project img {
   width: 100%;
   height: 100%;
   background-size: cover;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb {
   width: 100%;
   height: 100%;
   background: var(--color-06);
@@ -264,34 +314,16 @@ a {
   transition: 0.6s;
   -webkit-transition: 0.6s;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .blurb-hidden {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .blurb-hidden {
   opacity: 1;
   font-size: 1.7em;
   transform: translateY(130px);
   -webkit-transform: translateY(130px);
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project:hover
-  .blurb
-  .blurb-hidden {
+.container-cv .main-personal .ps-info_container .show-project .block-project:hover .blurb .blurb-hidden {
   opacity: 0;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  p,
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb p,
 a {
   text-transform: uppercase;
   font-size: 1.3em;
@@ -307,25 +339,12 @@ a {
   transition: 0.5s ease-in-out;
   opacity: 0;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .project-preview {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .project-preview {
   position: relative;
   margin-top: 7px;
   overflow: hidden;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .project-preview
-  span {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .project-preview span {
   position: absolute;
   top: 0;
   left: 0;
@@ -338,51 +357,26 @@ a {
   -webkit-transition: 0.3s ease-in-out;
   -webkit-transform: translateX(-200px);
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .project-preview:hover
-  span {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .project-preview:hover span {
   opacity: 1;
   width: 100%;
   height: 100%;
   transform: translateX(200px);
   -webkit-transform: translateX(200px);
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .project-preview:hover {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .project-preview:hover {
   box-shadow: -2px 2px 13px 7px rgba(255, 255, 255, 0.52);
   transition-delay: 0.2s;
   -webkit-transition-delay: 0.2s;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project:hover
-  .blurb
-  p {
+.container-cv .main-personal .ps-info_container .show-project .block-project:hover .blurb p {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
   opacity: 1;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project:hover
-  .blurb
-  a {
+.container-cv .main-personal .ps-info_container .show-project .block-project:hover .blurb a {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
   -o-transform: translateY(0);
@@ -390,22 +384,10 @@ a {
   transition-delay: 0.1s;
   opacity: 1;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .text-intro-project {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .text-intro-project {
   margin-top: 80px;
 }
-.container-cv
-  .main-personal
-  .ps-info_container
-  .show-project
-  .block-project
-  .blurb
-  .project-preview {
+.container-cv .main-personal .ps-info_container .show-project .block-project .blurb .project-preview {
   padding: 10px 25px;
   border: 1px solid var(--color-02);
   color: var(--color-02);
@@ -419,7 +401,7 @@ a {
 
 /* Icon Redirect */
 
-.social-icon{
+.social-icon {
   width: 500px;
   height: 50px;
   background-color: aliceblue;
